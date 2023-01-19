@@ -34,7 +34,7 @@ gem "redis", "~> 4.0"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
@@ -48,9 +48,51 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Use Figaro for securing configuration values https://github.com/laserlemon/figaro
+gem "figaro"
+
+# Use Devise for Authentication https://github.com/heartcombo/devise
+gem "devise"
+
+# Use Mailgun for Email Service https://github.com/mailgun/mailgun-ruby
+gem "mailgun-ruby"
+
+# Stripe integration https://github.com/tansengming/stripe-rails
+gem "stripe-rails"
+
+# Sidekiq for background jobs https://github.com/mperham/sidekiq
+gem "sidekiq"
+
+# Pagination gem https://github.com/mislav/will_paginate
+gem "will_paginate"
+
+# Phone number validation https://github.com/daddyz/phonelib
+gem "phonelib"
+
+# Country selector for forms https://github.com/countries/country_select
+gem "country_select"
+
+# Money formatting https://github.com/RubyMoney/money
+gem "money"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # Testing framework https://github.com/rspec/rspec-rails
+  gem "rspec-rails"
+
+  # Launch application from specs https://github.com/copiousfreetime/launchy
+  gem "launchy"
+
+  # See https://github.com/thoughtbot/factory_bot_rails
+  gem "factory_bot_rails"
+
+  # Create fake data https://github.com/faker-ruby/faker
+  gem "faker"
+
+  # See https://github.com/thoughtbot/shoulda-matchers
+  gem "shoulda-matchers"
 end
 
 group :development do
@@ -62,5 +104,22 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+end
+
+group :test do
+  # See https://github.com/teamcapybara/capybara
+  gem "capybara"
+
+  # See https://github.com/travisjeffery/timecop
+  gem "timecop"
+
+  # See https://github.com/bblimke/webmock
+  gem "webmock"
+
+  # See https://github.com/vcr/vcr
+  gem "vcr"
+
+  # See https://github.com/stripe-ruby-mock/stripe-ruby-mock
+  gem "stripe-ruby-mock"
 end
 
