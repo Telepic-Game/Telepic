@@ -29,3 +29,29 @@
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+
+# Environment variables
+.env
+
+# Local services
+Procfile.personal
+
+# VS Code IDE
+/.vscode
+
+# Local development gems
+.devpack
+# Ignore application configuration
+/config/application.yml
+
+# Environment variables
+.env
+
+# Local services
+Procfile.personal
+
+# VS Code IDE
+/.vscode
+
+# Local development gems
+.devpack
