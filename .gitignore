@@ -55,3 +55,6 @@ Procfile.personal
 
 # Local development gems
 .devpack
+
+# Ignore node_modules
+node_modules
