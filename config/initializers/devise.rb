@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '17783bfd88c8e7824e6a2501797814073274672bfa2b9987d65436e6f3c4636c96ce40b82a6f0532a3f002b72f76bfcfdf069a1132fe310b79acb2d7ee86e1f7'
+  # config.secret_key = Figaro.env.devise_secret_key
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'fedad17b02fd965dfe326f91d7a3dc14924dc45a3a5b620c2c4a5fa5a0c36d97851dbebe60857ac903dd6b0e406940bc7dcff7291159373a4c2c7bfb6322f02f'
+  # config.pepper = Figaro.env.devise_pepper
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
