@@ -18,7 +18,7 @@
 
 require "factory_bot_rails"
 require "support/factory_bot"
-require "support/vcr"
+# require "support/vcr"
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate

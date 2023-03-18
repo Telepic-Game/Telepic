@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_02_200112) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_18_171812) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,4 +54,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_02_200112) do
     t.index ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true
   end
 
+  create_table "waiting_room_players", force: :cascade do |t|
+    t.bigint "waiting_room_id", null: false
+    t.bigint "player_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_waiting_room_players_on_player_id"
+    t.index ["waiting_room_id"], name: "index_waiting_room_players_on_waiting_room_id"
+  end
+
+  create_table "waiting_rooms", force: :cascade do |t|
+    t.string "name"
+    t.json "data"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "room_code"
+  end
+
+  add_foreign_key "waiting_room_players", "players"
+  add_foreign_key "waiting_room_players", "waiting_rooms"
 end
