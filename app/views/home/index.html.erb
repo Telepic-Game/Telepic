@@ -1,0 +1,24 @@
+<div align="center">
+    <header class="index_header">
+        <h1>Welcome to Telepic!</h1><hr><br>
+    </header>
+
+        <div class="index_content">
+            <div id='index_btn'>
+            <% if logged_in? %>
+                <%= button_to "Log Out", logout_path, method: :delete %><br>
+                <%= button_to "Join Game", join_game_path, method: :get %><br>
+                <%= button_to "Create Game" %>
+                <%= button_to "Start Waiting Room as a Guest", new_waiting_room_path, method: :get %><br>
+            <% else %>
+                <%= button_to "Login", login_new_path, method: :get %><br>
+                <%= button_to "Register", register_path, method: :get %><br>
+                <%= button_to "Join Game", join_game_path, method: :get %><br>
+                <%= button_to "Start Waiting Room as a Guest", new_waiting_room_path, method: :get %><br>
+            <% end %>
+            </div>
+        </div>
+
+    <footer class="index_footer">
+    </footer>
+</div>
