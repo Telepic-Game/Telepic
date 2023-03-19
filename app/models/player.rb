@@ -4,6 +4,6 @@ class Player < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :waiting_room_players
+  has_many :waiting_room_players, dependent: :destroy
   has_many :waiting_rooms, through: :waiting_room_players
 end

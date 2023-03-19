@@ -1,5 +1,5 @@
 class WaitingRoom < ApplicationRecord
-  has_many :waiting_room_players
+  has_many :waiting_room_players, dependent: :destroy
   has_many :players, through: :waiting_room_players
 
   def self.generate_unique_room_code

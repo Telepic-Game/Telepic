@@ -1,0 +1,15 @@
+<h1>Join a Waiting Room</h1>
+
+<%= form_with url: waiting_room_players_path, method: :post, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :room_code, "Room Code" %>
+    <%= f.text_field :room_code, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :username, "Username" %>
+    <%= f.text_field :username, class: "form-control" %>
+  </div>
+  
+  <%= f.submit "Join Waiting Room", class: "btn btn-primary" %>
+<% end %>

@@ -7,7 +7,7 @@
         <div id='index_btn'>
         <% if logged_in? %>
             <%= button_to "Log Out", logout_path, method: :delete %><br>
-            <%= button_to "Join Game", join_game_path, method: :get %><br>
+            <%= button_to "Join Game", join_waiting_rooms_path, method: :get %><br>
             <%= button_to "Create Game" %>
 
             <%= form_with url: waiting_rooms_path, method: :post, local: true do |form| %>
@@ -16,7 +16,7 @@
         <% else %>
             <%= button_to "Login", login_new_path, method: :get %><br>
             <%= button_to "Register", register_path, method: :get %><br>
-            <%= button_to "Join Game", join_game_path, method: :get %><br>
+            <%= button_to "Join Game", join_waiting_rooms_path, method: :get %><br>
 
             <%= form_with url: waiting_rooms_path, method: :post, local: true do |form| %>
               <%= form.submit "Start Waiting Room as a Guest" %>

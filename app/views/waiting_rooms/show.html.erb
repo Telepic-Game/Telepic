@@ -1,2 +1,15 @@
 <h1>Waiting Room</h1>
 <p>Room code: <%= @waiting_room.room_code %></p>
+
+<%= link_to "Leave Waiting Room", leave_waiting_room_path(@waiting_room), method: :delete %>
+
+<% waiting_room_player = @waiting_room.waiting_room_players.find_by(player: current_user) %>
+<% if waiting_room_player&.creator? %>
+  <%= link_to "Delete Waiting Room", waiting_room_path(@waiting_room), method: :delete, data: { confirm: "Are you sure? This will delete the waiting room and kick all players out." } %>
+<% end %>
+
+<h2>Players</h2>
+<div id="players-list">
+  <%= turbo_stream_from @waiting_room, "players" %>
+  <%= render partial: "player", collection: @waiting_room.players %>
+</div>
