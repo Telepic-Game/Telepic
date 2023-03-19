@@ -8,6 +8,16 @@
   <%= link_to "Delete Waiting Room", waiting_room_path(@waiting_room), method: :delete, data: { confirm: "Are you sure? This will delete the waiting room and kick all players out." } %>
 <% end %>
 
+<form id="set-player-name-form" action="<%= set_player_name_path %>" method="post" data-remote="true">
+  <div>
+    <label for="player-name">Your name:</label>
+    <input type="text" id="player-name" name="player_name" required>
+  </div>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="hidden" name="waiting_room_id" value="<%= @waiting_room.id %>">
+  <button type="submit">Set Name</button>
+</form>
+
 <h2>Players</h2>
 <div id="players-list">
   <%= turbo_stream_from @waiting_room, "players" %>

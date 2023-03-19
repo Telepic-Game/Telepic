@@ -13,6 +13,7 @@
             <%= form_with url: waiting_rooms_path, method: :post, local: true do |form| %>
               <%= form.submit "Start Waiting Room as a Guest" %>
             <% end %><br>
+
         <% else %>
             <%= button_to "Login", login_new_path, method: :get %><br>
             <%= button_to "Register", register_path, method: :get %><br>
@@ -28,3 +29,4 @@
     <footer class="index_footer">
     </footer>
 </div>
+

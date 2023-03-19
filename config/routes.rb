@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     end
     delete :leave, on: :member
   end
+  post "/set_player_name", to: "waiting_rooms#set_player_name", as: :set_player_name
   # post '/waiting_rooms', to: 'waiting_rooms#create', as: :waiting_rooms
   # get '/waiting_rooms/show', to: 'waiting_rooms#show', as: :new_waiting_room
   get '/login', to: 'sessions#new', as: :login_new
